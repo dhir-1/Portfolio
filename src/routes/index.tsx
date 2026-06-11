@@ -7,6 +7,7 @@ import { Work } from "@/components/portfolio/Work";
 import { Experience } from "@/components/portfolio/Experience";
 import { Terminal } from "@/components/portfolio/Terminal";
 import { Contact } from "@/components/portfolio/Contact";
+import { BackgroundShader } from "@/components/portfolio/BackgroundShader";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,7 +30,8 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen bg-background text-foreground relative overflow-hidden">
+    <main className="min-h-screen bg-background/90 text-foreground relative overflow-hidden">
+      <BackgroundShader />
       <div className="ambient-glow-1" />
       <div className="ambient-glow-2" />
       <Nav />

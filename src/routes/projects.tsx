@@ -13,6 +13,7 @@ import {
   AlertTriangle 
 } from "lucide-react";
 import { WindowFrame } from "@/components/portfolio/WindowFrame";
+import { BackgroundShader } from "@/components/portfolio/BackgroundShader";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -186,7 +187,8 @@ function ProjectsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-background text-foreground relative overflow-hidden pb-24">
+    <main className="min-h-screen bg-background/90 text-foreground relative overflow-hidden pb-24">
+      <BackgroundShader />
       {/* Background ambient lighting */}
       <div className="ambient-glow-1" />
       <div className="ambient-glow-2" />
