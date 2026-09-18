@@ -11,7 +11,7 @@ const groups = [
   },
   {
     name: "Machine Learning",
-    items: ["PyTorch", "scikit-learn", "Pandas", "Computer Vision", "HuggingFace", "NumPy"],
+    items: ["PyTorch", "LangGraph", "scikit-learn", "ChromaDB / RAG", "HuggingFace", "Pandas"],
   },
   {
     name: "Video & Craft",

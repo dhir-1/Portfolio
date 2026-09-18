@@ -15,12 +15,12 @@ const commands: Record<string, string | (() => string)> = {
 graduated from BCA.
 sgpa: 8.82 | overall cgpa: 7.83.
 actively seeking internships in data science, ml, and ai.`,
-  skills: `ml & ds    · xgboost, scikit-learn, pandas, numpy, plotly, streamlit, computer vision
+  skills: `ml & rag   · langgraph, chromadb, xgboost, scikit-learn, pandas, pytorch
 backend    · fastapi, python, postgresql, sql, flask
 frontend   · react, tailwind css, vite, typescript`,
   projects: `01 · dhir's pit wall   (f1 telemetry ML predictor · 2026)
   02 · lexis             (sign language & speech interpreter · 2026)
-  03 · foodguard india   (early warning indicator ML · 2026)
+  03 · multi-agent rag   (financial form 10-k intelligence · 2026)
   04 · churno            (customer churn analytics · 2026)`,
   resume: `→ Dhir_Resume.pdf download started.`,
   contact: `email   · dhiragrawal17@gmail.com

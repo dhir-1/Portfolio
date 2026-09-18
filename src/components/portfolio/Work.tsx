@@ -29,14 +29,15 @@ const projects = [
   },
   {
     n: "03",
-    title: "FoodGuard India",
-    fullName: "FoodGuard India — Food Security Early Warning System",
-    kind: "Machine Learning · Forecasting",
+    title: "Multi-Agent Financial RAG",
+    fullName: "Multi-Agent Financial RAG — SEC Form 10-K Intelligence System",
+    kind: "Multi-Agent AI · Financial RAG",
     year: "2026",
-    body: "A 2-step ML early warning system combining Random Forest retail price growth forecasts with rainfall deficits and baseline nutrition into a risk index. Built on a 2.1M retail price panel and daily rainfall records, yielding 3.49% MAE. Shipped as a Streamlit dashboard.",
-    stack: ["Python", "Scikit-Learn", "Pandas", "NumPy", "Plotly", "Streamlit"],
-    accent: "var(--teal)",
-    source: "https://github.com/dhir-1/Food-Crisis-India",
+    status: "Completed",
+    body: "An institutional-grade multi-agent RAG pipeline built with LangGraph for analyzing SEC Form 10-K filings across 10 tech giants. Features dynamic zero-hardcoding filing registry, 50/50 balanced entity dispatch, a calibrated CPU cross-encoder confidence gate (FlashRank), schema-bounded adaptive synthesis with strict SEC citations [TICKER, Section], and deterministic mathematical guardrails.",
+    stack: ["Python", "LangGraph", "Groq (gpt-oss-20b)", "ChromaDB", "BM25", "FlashRank", "FastAPI"],
+    accent: "oklch(0.65 0.18 160)",
+    source: "https://github.com/dhir-1/Multi_rag",
   },
   {
     n: "04",
@@ -198,11 +199,51 @@ export function Work() {
                     )}
 
                     {p.n === "03" && (
-                      <div className="relative group-hover:scale-110 group-hover:rotate-[6deg] transition-all duration-500 ease-out flex items-center justify-center">
-                        <div className="absolute -inset-4 bg-teal/10 rounded-full blur-xl animate-pulse" />
-                        <span className="text-8xl select-none filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative z-10">
-                          🌾
-                        </span>
+                      <div className="relative w-[85%] rounded-xl border border-emerald-500/25 bg-black/50 backdrop-blur-md overflow-hidden flex flex-col justify-between p-4 group-hover:border-emerald-500/45 transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                        {/* Status bar */}
+                        <div className="flex items-center justify-between text-[8px] font-mono text-emerald-400/70 tracking-wider pb-2 border-b border-white/5">
+                          <span className="flex items-center gap-1.5">
+                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
+                            <span className="text-emerald-300 font-semibold">LANGGRAPH_PIPELINE [ACTIVE]</span>
+                          </span>
+                          <span className="text-white/40">SEC 10-K · 10 FIRMS</span>
+                        </div>
+
+                        {/* Pipeline Node visualization */}
+                        <div className="py-2.5 space-y-1.5 font-mono text-[9px]">
+                          <div className="flex items-center justify-between px-2.5 py-1.5 rounded bg-white/5 border border-white/10">
+                            <span className="text-white/60 flex items-center gap-1.5">
+                              <span className="text-emerald-400">⚡</span>
+                              <span>ENTITY DISPATCH:</span>
+                            </span>
+                            <span className="text-emerald-400 font-medium">50/50 BALANCED</span>
+                          </div>
+
+                          <div className="flex items-center justify-between px-2.5 py-1.5 rounded bg-white/5 border border-white/10">
+                            <span className="text-white/60 flex items-center gap-1.5">
+                              <span className="text-cyan-400">◆</span>
+                              <span>FLASHRANK ONNX:</span>
+                            </span>
+                            <span className="text-cyan-300 font-medium">CONFIDENCE ≥ 0.001</span>
+                          </div>
+
+                          <div className="flex items-center justify-between px-2.5 py-1.5 rounded bg-emerald-500/10 border border-emerald-500/20">
+                            <span className="text-white/70 flex items-center gap-1.5">
+                              <span className="text-emerald-400">✓</span>
+                              <span>SEC CITATION AUDIT:</span>
+                            </span>
+                            <span className="text-emerald-300 font-semibold">[TICKER, Section]</span>
+                          </div>
+                        </div>
+
+                        {/* Bottom chips / metrics */}
+                        <div className="pt-2 border-t border-white/5 flex items-center justify-between font-mono text-[8px] text-white/50">
+                          <div className="flex gap-1.5">
+                            <span className="px-1.5 py-0.5 rounded bg-white/10 text-white/80">[NVDA, Item 7]</span>
+                            <span className="px-1.5 py-0.5 rounded bg-white/10 text-white/80">[AMD, Item 1A]</span>
+                          </div>
+                          <span className="text-emerald-400/90 font-medium">0 TOKENS PRE-FLIGHT</span>
+                        </div>
                       </div>
                     )}
 

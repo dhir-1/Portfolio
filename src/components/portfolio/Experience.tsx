@@ -9,7 +9,7 @@ const items = [
     year: "2026",
     role: "Applied ML Projects",
     org: "Self-driven",
-    body: "Shipped Churno (telecom churn predictor with FastAPI/PostgreSQL), Dhir's Pit Wall (F1 telemetry & race predictor with FastF1/XGBoost), and FoodGuard India (Streamlit early warning risk indicator).",
+    body: "Shipped Multi-Agent Financial RAG (SEC Form 10-K intelligence with LangGraph & FlashRank), Dhir's Pit Wall (F1 telemetry & race predictor with FastF1/XGBoost), Churno (telecom churn predictor with FastAPI/PostgreSQL), and FoodGuard India (Streamlit early warning risk indicator).",
   },
   {
     year: "2023",
