@@ -27,17 +27,44 @@ export function Contact() {
     const message = formData.get("message") as string;
 
     try {
-      const response = await submitContactForm({
-        data: { name, email, subject, message },
-      });
+      let response: { success: boolean; method?: string; message?: string } | undefined;
+      
+      try {
+        response = await submitContactForm({
+          data: { name, email, subject, message },
+        });
+      } catch (serverErr) {
+        console.warn("Server function failed, submitting directly to Web3Forms:", serverErr);
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: "7fc133e6-24a3-4bae-8ad5-2b969cb04b2f",
+            name,
+            email,
+            subject,
+            message,
+          }),
+        });
+        const result = await res.json();
+        if (res.ok && result.success) {
+          response = {
+            success: true,
+            method: "web3forms",
+            message: "Message sent successfully!",
+          };
+        } else {
+          throw new Error(result.message || "Failed to send message via Web3Forms.");
+        }
+      }
 
-      if (response.success) {
+      if (response && response.success) {
         setSent(true);
         form.reset();
         toast.success(response.message || "Message sent successfully!");
-        if (response.method === "console") {
-          toast.info("Demo Mode: Messages are logged to the console.", { duration: 6000 });
-        }
         setTimeout(() => setSent(false), 4000);
       } else {
         toast.error("Failed to send message. Please try again.");

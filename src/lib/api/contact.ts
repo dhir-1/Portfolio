@@ -21,7 +21,7 @@ export const submitContactForm = createServerFn({ method: "POST" })
     console.log("========================================\n");
 
     const resendKey = process.env.RESEND_API_KEY;
-    const web3formsKey = process.env.VITE_WEB3FORMS_ACCESS_KEY || process.env.WEB3FORMS_ACCESS_KEY;
+    const web3formsKey = process.env.VITE_WEB3FORMS_ACCESS_KEY || process.env.WEB3FORMS_ACCESS_KEY || "7fc133e6-24a3-4bae-8ad5-2b969cb04b2f";
 
     // 2. Try Resend if API key is provided
     if (resendKey) {
